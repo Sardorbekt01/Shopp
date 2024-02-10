@@ -1,0 +1,13 @@
+{% load socialaccount %}
+<h1>CWS All Auth tutorial</h1>
+
+ {% if request.user.is_authenticated %}
+
+
+<a href="{% url 'account_logout' %}">Log out</a>
+<h1></h1>
+ {% else %}
+
+
+<a href="{% provider_login_url 'github' 8}">Login with github</a>
+ {% endif %}
