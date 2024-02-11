@@ -38,7 +38,7 @@ class Product(models.Model):
 
     def __str__(self) -> str:
         return self.name
-    
+
     def clean(self):
         if Product.objects.exclude(id=self.id).filter(name=self.name).exists():
             raise ValidationError("Bu nom bilan maxsulot allaqachon mavjud.")
